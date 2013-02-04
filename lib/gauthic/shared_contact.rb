@@ -195,6 +195,7 @@ module Gauthic
 
     def create_new_record(debug=false)
       url = "https://www.google.com/m8/feeds/contacts/#{session.domain}/full"
+      puts "xmlizzle:#{xml}"
       result = session.post(url, :headers => {'Content-Type' => 'application/atom+xml'}, :body => xml)
       if Net::HTTPSuccess === result
         self.xml = result.body
