@@ -207,6 +207,7 @@ module Gauthic
 
     def update_existing_record(debug=false)
       url = document.at_xpath('.//xmlns:link[@rel="edit"]').attribute('href').value
+      puts "xmlozzle:#{xml}"
       result = session.put(url, :headers => {'Content-Type' => 'application/atom+xml'}, :body => xml)
       if Net::HTTPSuccess === result
         self.xml = result.body

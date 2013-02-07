@@ -5,6 +5,8 @@ module Gauthic
       def label=(value)   root['label'] = value end
       def number()        root.content end
       def number=(value)  root.content = value end
+      def primary()         root['primary'] end
+      def primary=(value)   root['primary'] = value end
     end
   end
 end
